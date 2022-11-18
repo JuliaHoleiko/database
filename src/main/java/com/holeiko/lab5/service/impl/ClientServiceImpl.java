@@ -7,6 +7,7 @@ import com.holeiko.lab5.service.ClientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.List;
 @Service
 public class ClientServiceImpl implements ClientService {
@@ -50,4 +51,19 @@ public class ClientServiceImpl implements ClientService {
         clientRepository.delete(client);
 
     }
+    @Transactional
+    public void AddClient(String nameIn ,String surnameIn , String emailIn , String phoneIn){
+        clientRepository.AddClient(nameIn, surnameIn, emailIn, phoneIn);
+
+
+
+    }
+    @Transactional
+    public void AddTenFakeClients(){
+        clientRepository.AddTenFakeClients();
+    }
+    @Transactional
+    public Integer getMaxWaterConsume(){return clientRepository.getMaxWaterConsume();}
+    @Transactional
+    public void createTables(){clientRepository.createTables();}
 }

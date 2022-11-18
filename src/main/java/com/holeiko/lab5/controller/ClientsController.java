@@ -4,6 +4,7 @@ import com.holeiko.lab5.domain.Clients;
 import com.holeiko.lab5.dto.ClientDto;
 import com.holeiko.lab5.dto.assembler.ClientsDtoAssembler;
 import com.holeiko.lab5.service.ClientService;
+import com.holeiko.lab5.service.impl.ClientServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.hateoas.CollectionModel;
 import org.springframework.http.HttpStatus;
@@ -16,7 +17,7 @@ import java.util.List;
 @RequestMapping(value = "/api/clients")
 public class ClientsController {
     @Autowired
-    ClientService clientService;
+    ClientServiceImpl clientService;
     @Autowired
     ClientsDtoAssembler clientsDtoAssembler;
 
@@ -40,8 +41,27 @@ public class ClientsController {
         ClientDto clientDto = clientsDtoAssembler.toModel(newClient);
         return new ResponseEntity<>(clientDto, HttpStatus.CREATED);
     }
+    @PostMapping(value = "/add")
+    public void addClientProcedure(@RequestBody Clients clients) {
+        clientService.AddClient(clients.getName(), clients.getSurname(), clients.getEmail(),clients.getPhoneNumber());
+        System.out.println("add client");
 
-    @PutMapping(value = "/{clientId}")
+    }
+    @PostMapping(value = "/max_water")
+    public Integer maxWaterConsume() {
+        Integer result= clientService. getMaxWaterConsume();
+        System.out.println(result);
+        return result;
+    }
+    @PostMapping(value = "/create_tables")
+    public void createTables() {
+        clientService.createTables();
+        System.out.println("create tables");
+    }
+
+
+
+        @PutMapping(value = "/{clientId}")
     public ResponseEntity<?> updateClient(@RequestBody Clients client, @PathVariable Integer clientId) {
         clientService.update(clientId, client);
         return new ResponseEntity<>(HttpStatus.OK);
@@ -52,4 +72,10 @@ public class ClientsController {
         clientService.delete(clientId);
         return new ResponseEntity<>(HttpStatus.OK);
     }
+    @PostMapping(value = "/ten")
+    public void addTenRecords(){
+        clientService.AddTenFakeClients();
+    }
+
+
 }

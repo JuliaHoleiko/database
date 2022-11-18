@@ -52,14 +52,14 @@ public class AreaController {
     }
 
     @PutMapping(value = "/{clientId}")
-    public ResponseEntity<?> updateCity(@RequestBody Clients client, @PathVariable Integer clientId) {
-        clientService.update(clientId, client);
+    public ResponseEntity<?> updateCity(@RequestBody Areas area, @PathVariable Integer areasId) {
+        areaService.update(areasId, area);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
     @DeleteMapping(value = "/{clientId}")
     public ResponseEntity<?> deleteCity(@PathVariable Integer clientId) {
-        clientService.delete(clientId);
+        areaService.delete(clientId);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
