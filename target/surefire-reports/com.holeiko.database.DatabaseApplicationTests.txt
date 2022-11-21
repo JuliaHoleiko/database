@@ -1,0 +1,9 @@
+-------------------------------------------------------------------------------
+Test set: com.holeiko.database.DatabaseApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 2.294 s <<< FAILURE! - in com.holeiko.database.DatabaseApplicationTests
+contextLoads  Time elapsed: 0.001 s  <<< ERROR!
+java.lang.IllegalStateException: Failed to load ApplicationContext
+Caused by: java.lang.IllegalStateException: Failed to execute CommandLineRunner
+Caused by: java.lang.NullPointerException: Cannot invoke "com.holeiko.database.dao.impl.AreaDaoImpl.findAll()" because "this.areaImp" is null
+
