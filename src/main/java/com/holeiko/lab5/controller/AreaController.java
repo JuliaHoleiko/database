@@ -9,6 +9,7 @@ import com.holeiko.lab5.dto.assembler.ClientsDtoAssembler;
 import com.holeiko.lab5.service.AreaService;
 import com.holeiko.lab5.service.ClientService;
 import com.holeiko.lab5.service.impl.AreaServiceImpl;
+import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.hateoas.CollectionModel;
 import org.springframework.http.HttpStatus;
@@ -19,6 +20,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping(value = "/api/area")
+@Api(tags = "Area")
 public class AreaController {
     @Autowired
     AreaServiceImpl areaService;

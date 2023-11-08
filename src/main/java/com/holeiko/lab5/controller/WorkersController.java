@@ -7,6 +7,7 @@ import com.holeiko.lab5.dto.WorkersDto;
 import com.holeiko.lab5.dto.assembler.WorkersDtoAssembler;
 import com.holeiko.lab5.service.WorkersService;
 import com.holeiko.lab5.service.impl.WorkersServiceImpl;
+import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.hateoas.CollectionModel;
 import org.springframework.http.HttpStatus;
@@ -17,6 +18,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping(value = "/api/workers")
+@Api(tags = "Workers")
 public class WorkersController {
     @Autowired
     WorkersDtoAssembler workersDtoAssembler;

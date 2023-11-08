@@ -8,6 +8,7 @@ import com.holeiko.lab5.dto.LoggerDto;
 import com.holeiko.lab5.dto.assembler.LoggerDtoAssembler;
 import com.holeiko.lab5.service.LoggerService;
 import com.holeiko.lab5.service.impl.LoggerServiceImpl;
+import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.hateoas.CollectionModel;
 import org.springframework.http.HttpStatus;
@@ -18,6 +19,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping(value = "/api/logger")
+@Api(tags = "Logger")
 public class LoggerController  {
     @Autowired
     LoggerServiceImpl loggerService;

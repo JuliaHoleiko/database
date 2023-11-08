@@ -5,6 +5,7 @@ import com.holeiko.lab5.dto.ClientDto;
 import com.holeiko.lab5.dto.assembler.ClientsDtoAssembler;
 import com.holeiko.lab5.service.ClientService;
 import com.holeiko.lab5.service.impl.ClientServiceImpl;
+import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.hateoas.CollectionModel;
 import org.springframework.http.HttpStatus;
@@ -15,6 +16,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping(value = "/api/clients")
+@Api(tags = "Client")
 public class ClientsController {
     @Autowired
     ClientServiceImpl clientService;

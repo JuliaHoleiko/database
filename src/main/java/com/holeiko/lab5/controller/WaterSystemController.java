@@ -6,6 +6,7 @@ import com.holeiko.lab5.dto.PumpDto;
 import com.holeiko.lab5.dto.WaterSystemDto;
 import com.holeiko.lab5.dto.assembler.WaterSystemDtoAssembler;
 import com.holeiko.lab5.service.impl.WaterSystemServiceImpl;
+import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.hateoas.CollectionModel;
 import org.springframework.http.HttpStatus;
@@ -16,6 +17,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping(value = "/api/water")
+@Api(tags = "water system")
 public class WaterSystemController {
     @Autowired
     WaterSystemServiceImpl waterSystemService;

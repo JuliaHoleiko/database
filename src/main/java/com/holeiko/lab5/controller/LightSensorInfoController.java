@@ -8,6 +8,7 @@ import com.holeiko.lab5.dto.assembler.AreaDtoAssembler;
 import com.holeiko.lab5.dto.assembler.LightDtoAssembler;
 import com.holeiko.lab5.service.impl.AreaServiceImpl;
 import com.holeiko.lab5.service.impl.LightSensorInfoServiceImpl;
+import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.hateoas.CollectionModel;
 import org.springframework.http.HttpStatus;
@@ -18,6 +19,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping(value = "/api/sensor_info")
+@Api(tags = "Light Sensor info")
 public class LightSensorInfoController {
     @Autowired
     AreaServiceImpl areaService;

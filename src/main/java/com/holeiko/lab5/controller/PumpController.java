@@ -11,6 +11,7 @@ import com.holeiko.lab5.service.PumpService;
 import com.holeiko.lab5.service.impl.AreaServiceImpl;
 import com.holeiko.lab5.service.impl.LightSensorInfoServiceImpl;
 import com.holeiko.lab5.service.impl.PumpServiceImpl;
+import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.hateoas.CollectionModel;
 import org.springframework.http.HttpStatus;
@@ -21,6 +22,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping(value = "/api/pumps")
+@Api(tags = "Pump")
 public class PumpController {
     @Autowired
     AreaServiceImpl areaService;
