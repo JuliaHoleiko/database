@@ -3,9 +3,10 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      java: corretto17
+      java: corretto-17
     commands:
-      - yum install maven -y
+      - sudo apt update
+      - sudo apt install maven -y
   build:
     commands:
       - mvn clean install
@@ -19,3 +20,4 @@ artifacts:
     - scripts/*.sh
     - appspec.yml
   discard-paths: yes
+
