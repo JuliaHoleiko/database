@@ -5,7 +5,7 @@ phases:
     runtime-versions:
       java: corretto17
     commands:
-      - sudo yum install maven -y
+      - yum install maven -y
   build:
     commands:
       - mvn clean install
