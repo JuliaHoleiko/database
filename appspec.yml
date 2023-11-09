@@ -13,7 +13,7 @@ permissions:
 
 hooks:
   BeforeInstall:
-    - location: /scripts/server_clear.sh
+    - location: server_clear.sh
       timeout: 300
       runas: ubuntu
   AfterInstall:
