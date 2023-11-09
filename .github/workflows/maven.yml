@@ -10,7 +10,7 @@ name: Java CI with Maven
 
 on:
   push:
-    branches: [ "lab6" ]
+    branches: [ "main" ]
   
 
 jobs:
