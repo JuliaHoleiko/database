@@ -2,7 +2,7 @@ version: 0.0
 os: linux
 
 files:
-  - source: /
+  - source: /scripts
     destination: /home/ubuntu/server
 
 permissions:
@@ -13,11 +13,11 @@ permissions:
 
 hooks:
   BeforeInstall:
-    - location: scripts/server_clear.sh
+    - location: server_clear.sh
       timeout: 300
       runas: ubuntu
   AfterInstall:
-    - location: scripts/fix_privileges.sh
+    - location: fix_privileges.sh
       timeout: 300
       runas: ubuntu
   ApplicationStart:
